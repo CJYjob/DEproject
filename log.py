@@ -2,13 +2,19 @@ from datetime import datetime
 import random
 import time
 
-URL_DIR = ['']
+
+
+STAUS = [200, 200, 200,200, 200, 200, 200, 200, 200, 200, 200, 200, 206, 302, 304, 404, 500]
 
 def create_log():
+  with open('url.txt') as f:
+    randomLine = random.choice(list(f.readlines()))
+    f.close()
+
   IP = '.'.join(map(lambda x:str(random.randrange(1, 255)), range(4)))
-  Time = datetime.now().strftime("%d/%B/%Y %H:%M:%S")
-  URL = random.choice(["GET", "GET", "GET", "GET", "POST"])+(' HTTP/1.1')
-  Staus = random.choice([200, 200, 200,200, 200, 200, 200, 200, 200, 200, 200, 200, 206, 302, 304, 404, 500])
+  Time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+  URL = randomLine.splitlines()[0]
+  Staus = random.choice(STAUS)
   return IP, Time, URL, Staus
 
 # IP              Time                    URL                    Staus
@@ -17,4 +23,4 @@ def create_log():
 while True:
   print(create_log())
 
-  time.sleep(1)
+  time.sleep(.5)
