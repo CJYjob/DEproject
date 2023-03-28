@@ -1,0 +1,24 @@
+[2023-03-28T06:15:23.355+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: example_sla_dag.sleep_30 scheduled__2023-03-28T05:46:00+00:00 [queued]>
+[2023-03-28T06:15:23.469+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: example_sla_dag.sleep_30 scheduled__2023-03-28T05:46:00+00:00 [queued]>
+[2023-03-28T06:15:23.469+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-28T06:15:23.470+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-03-28T06:15:23.470+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-28T06:15:23.627+0000] {taskinstance.py:1303} INFO - Executing <Task(_PythonDecoratedOperator): sleep_30> on 2023-03-28 05:46:00+00:00
+[2023-03-28T06:15:23.633+0000] {standard_task_runner.py:55} INFO - Started process 438 to run task
+[2023-03-28T06:15:23.639+0000] {standard_task_runner.py:82} INFO - Running: ['airflow', 'tasks', 'run', 'example_sla_dag', 'sleep_30', 'scheduled__2023-03-28T05:46:00+00:00', '--job-id', '74', '--raw', '--subdir', '/home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_sla_dag.py', '--cfg-path', '/tmp/tmpk0ky9yu0']
+[2023-03-28T06:15:23.640+0000] {standard_task_runner.py:83} INFO - Job 74: Subtask sleep_30
+[2023-03-28T06:15:24.840+0000] {task_command.py:388} INFO - Running <TaskInstance: example_sla_dag.sleep_30 scheduled__2023-03-28T05:46:00+00:00 [running]> on host 9119afc303d7
+[2023-03-28T06:15:25.708+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=email@example.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=example_sla_dag
+AIRFLOW_CTX_TASK_ID=sleep_30
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-28T05:46:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-03-28T05:46:00+00:00
+[2023-03-28T06:15:55.740+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-03-28T06:15:55.842+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=example_sla_dag, task_id=sleep_30, execution_date=20230328T054600, start_date=20230328T061523, end_date=20230328T061555
+[2023-03-28T06:15:55.971+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-03-28T06:15:56.102+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,15 @@
+[2023-03-28T05:56:25.640+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: example_xcom.push_by_returning scheduled__2021-01-01T00:00:00+00:00 [queued]>
+[2023-03-28T05:56:46.704+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: example_xcom.push_by_returning scheduled__2021-01-01T00:00:00+00:00 [queued]>
+[2023-03-28T05:56:46.704+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-28T05:56:46.705+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-03-28T05:56:46.705+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-28T05:56:53.692+0000] {taskinstance.py:1303} INFO - Executing <Task(_PythonDecoratedOperator): push_by_returning> on 2021-01-01 00:00:00+00:00
+[2023-03-28T05:56:56.461+0000] {standard_task_runner.py:55} INFO - Started process 132 to run task
+[2023-03-28T05:57:03.821+0000] {standard_task_runner.py:82} INFO - Running: ['airflow', 'tasks', 'run', 'example_xcom', 'push_by_returning', 'scheduled__2021-01-01T00:00:00+00:00', '--job-id', '49', '--raw', '--subdir', '/home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_xcom.py', '--cfg-path', '/tmp/tmpqua1v010']
+[2023-03-28T05:57:03.822+0000] {standard_task_runner.py:83} INFO - Job 49: Subtask push_by_returning
+[2023-03-28T05:57:19.621+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 49 for task push_by_returning ((MySQLdb.OperationalError) (1040, 'Too many connections')
+(Background on this error at: https://sqlalche.me/e/14/e3q8); 132)
+[2023-03-28T05:57:20.711+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-03-28T05:57:21.548+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check
