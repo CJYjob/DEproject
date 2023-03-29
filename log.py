@@ -1,8 +1,7 @@
 from datetime import datetime
 import random
 import time
-
-
+import logging
 
 STAUS = [200, 200, 200,200, 200, 200, 200, 200, 200, 200, 200, 200, 206, 302, 304, 404, 500]
 
@@ -20,7 +19,11 @@ def create_log():
 # IP              Time                    URL                    Staus
 # 10.128.2.1   29/Nov/2017 06:58:55   GET /login.php HTTP/1.1   200
 
-while True:
-  print(create_log())
+# endtime = datetime(2023,3,29,15,0,0,0)
+endtime = datetime(2023,3,29,22,45,0,0)
 
-  time.sleep(1)
+while (datetime.now()<endtime):
+  print(create_log())
+  with open('logfile.log', 'a') as f:
+      f.write(str(create_log())+'\n')
+  time.sleep(random.uniform(0.1,0.9))
